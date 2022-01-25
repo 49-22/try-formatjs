@@ -1,25 +1,57 @@
-import logo from './logo.svg';
-import './App.css';
+import {
+  IntlProvider,
+  FormattedMessage,
+  FormattedNumber,
+  injectIntl,
+} from "react-intl";
+
+const messagesInFrench = {
+  myMessage: "Aujourd'hui, c'est le {ts, date, ::yyyyMMdd}",
+};
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <IntlProvider messages={messagesInFrench} locale="fr" defaultLocale="en">
+      <p>
+        <FormattedMessage
+          id="myMessage"
+          defaultMessage="Today is {ts, date, ::yyyyMMdd}"
+          values={{ ts: Date.now() }}
+        />
+        <br />
+        {/* eslint-disable-next-line react/style-prop-object */}
+        <FormattedNumber value={19} style="currency" currency="EUR" />
+        <IntlComp />
+      </p>
+    </IntlProvider>
   );
 }
 
 export default App;
+
+const Comp = ({ intl }) => {
+  const buttonText = intl.formatMessage(
+    {
+      id: "1",
+      description: "button 1",
+      defaultMessage: "{name} - button 1",
+    },
+    {
+      name: "press me",
+    }
+  );
+
+  const buttonText2 = intl.formatMessage({
+    id: "2",
+    description: "button 2",
+    defaultMessage: "press me - button 2",
+  });
+  return (
+    <>
+      <button>{buttonText}</button>
+      <button>{buttonText2}</button>
+    </>
+  );
+};
+
+const IntlComp = injectIntl(Comp);
