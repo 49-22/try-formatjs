@@ -15,7 +15,7 @@ function App() {
       <p>
         <FormattedMessage
           id="myMessage"
-          defaultMessage="Today is {ts, date, ::yyyyMMdd}"
+          defaultMessage="Today iss {ts, date, ::yyyyMMdd}"
           values={{ ts: Date.now() }}
         />
         <br />
