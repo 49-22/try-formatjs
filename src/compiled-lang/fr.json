@@ -1,0 +1,37 @@
+{
+  "1": [
+    {
+      "type": 1,
+      "value": "name"
+    },
+    {
+      "type": 0,
+      "value": " - buttonFr 1"
+    }
+  ],
+  "2": [
+    {
+      "type": 0,
+      "value": "press me - buttonFr 2"
+    }
+  ],
+  "myMessage": [
+    {
+      "type": 0,
+      "value": "TodayFr iss "
+    },
+    {
+      "style": {
+        "parsedOptions": {
+          "day": "2-digit",
+          "month": "2-digit",
+          "year": "numeric"
+        },
+        "pattern": "yyyyMMdd",
+        "type": 1
+      },
+      "type": 3,
+      "value": "ts"
+    }
+  ]
+}

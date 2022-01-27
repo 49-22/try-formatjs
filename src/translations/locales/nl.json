@@ -1,0 +1,6 @@
+{
+  "1": "{name} - button 1",
+  "2": "press me - button 2",
+  "3": "press me - button 3",
+  "myMessage": "Today iss {ts, date, ::yyyyMMdd}"
+}

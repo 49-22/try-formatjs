@@ -17,7 +17,11 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "extract": "formatjs extract 'src/**/*.js*' '--ignore=**/*.d.ts' '--out-file' 'lang/en.json' '--id-interpolation-pattern' '[sha512:contenthash:base64:6]'"
+    "extract": "formatjs extract 'src/**/*.js*' '--ignore=**/*.{d.ts,json}' '--out-file' 'src/lang/en.json' '--id-interpolation-pattern' '--extract-source-location' '--flatten' '[sha512:contenthash:base64:6]'",
+    "compileNl": "formatjs compile 'src/translations/locales/nl.json' '--out-file' 'src/compiled-lang/nl.json'",
+    "compileFr": "formatjs compile 'src/translations/locales/fr.json' '--out-file' 'src/compiled-lang/fr.json'",
+    "manage:translations": "node src/translationRunner.js",
+    "completeTranslationsCommand": "npm run extract && npm run manage:translations && npm run compileNl && npm run compileFr"
   },
   "eslintConfig": {
     "extends": [
@@ -39,6 +43,7 @@
   },
   "devDependencies": {
     "@formatjs/cli": "^4.8.1",
-    "babel-plugin-formatjs": "^10.3.17"
+    "babel-plugin-formatjs": "^10.3.17",
+    "react-intl-translations-manager": "^5.0.3"
   }
 }

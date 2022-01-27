@@ -1,0 +1,17 @@
+{
+  "1": {
+    "defaultMessage": "{name} - button 1",
+    "description": "button 1"
+  },
+  "2": {
+    "defaultMessage": "press me - button 2",
+    "description": "button 2"
+  },
+  "3": {
+    "defaultMessage": "press me - button 3",
+    "description": "button 3"
+  },
+  "myMessage": {
+    "defaultMessage": "Today iss {ts, date, ::yyyyMMdd}"
+  }
+}

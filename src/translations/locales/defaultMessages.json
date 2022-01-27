@@ -1,0 +1,22 @@
+[
+  {
+    "descriptors": [
+      {
+        "defaultMessage": "{name} - button 1",
+        "id": "1"
+      },
+      {
+        "defaultMessage": "press me - button 2",
+        "id": "2"
+      },
+      {
+        "defaultMessage": "press me - button 3",
+        "id": "3"
+      },
+      {
+        "defaultMessage": "Today iss {ts, date, ::yyyyMMdd}",
+        "id": "myMessage"
+      }
+    ]
+  }
+]

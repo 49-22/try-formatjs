@@ -5,13 +5,9 @@ import {
   injectIntl,
 } from "react-intl";
 
-const messagesInFrench = {
-  myMessage: "Aujourd'hui, c'est le {ts, date, ::yyyyMMdd}",
-};
-
-function App() {
+function App({ locale, messages }) {
   return (
-    <IntlProvider messages={messagesInFrench} locale="fr" defaultLocale="en">
+    <IntlProvider messages={messages} locale={locale} defaultLocale="en">
       <p>
         <FormattedMessage
           id="myMessage"
@@ -45,6 +41,12 @@ const Comp = ({ intl }) => {
     id: "2",
     description: "button 2",
     defaultMessage: "press me - button 2",
+  });
+
+  const buttonText3 = intl.formatMessage({
+    id: "3",
+    description: "button 3",
+    defaultMessage: "press me - button 3",
   });
   return (
     <>
